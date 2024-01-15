@@ -133,17 +133,6 @@ export const RESUME_DATA = {
         "Extended an A/B test web monitoring platform used across apps like Youtube, Gmail, and several internal tools.",
     },
     {
-      company: "Oracle",
-      location: "Bay Area, CA",
-      title: "Technical Solutions Engineer",
-      badges: ["On Site"],
-      start: "6/2013",
-      link: "https://oracle.com",
-      end: "10/2014",
-      description:
-        "Led or co-led customer-facing presentations, extended functionality of internal Chrome extensions using javascript/jquery.",
-    },
-    {
       company: "HackerRank",
       location: "Bay Area, CA",
       title: "Technical Solutions Engineer",
@@ -151,6 +140,17 @@ export const RESUME_DATA = {
       badges: ["On Site"],
       start: "10/2014",
       end: "10/2015",
+      description:
+        "Led or co-led customer-facing presentations, extended functionality of internal Chrome extensions using javascript/jquery.",
+    },
+    {
+      company: "Oracle",
+      location: "Bay Area, CA",
+      title: "Technical Solutions Engineer",
+      badges: ["On Site"],
+      start: "6/2013",
+      link: "https://oracle.com",
+      end: "10/2014",
       description:
         "Led or co-led customer-facing presentations, extended functionality of internal Chrome extensions using javascript/jquery.",
     },
