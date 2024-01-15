@@ -83,7 +83,7 @@ export const RESUME_DATA = {
       title: "Technology / Engineering Director",
       link: "https://stavvy.com",
       start: "10/2019",
-      end: "5/2022",
+      end: "8/2023",
       badges: ["Hybrid"],
       description:
         "Led implementation of core loan management and esigning platform, recruited and hired engineering team members, set up vendor/integration logs, configured data pipeline, performed FedRamp gap analysis, co-reviewed eSign engine.",
@@ -117,7 +117,7 @@ export const RESUME_DATA = {
       link: "https://ehealth.ucla.edu/",
       badges: ["On Site"],
       start: "10/2015",
-      end: "1/2017",
+      end: "3/2017",
       description:
         "Main Developer on Android wearable and mobile app predicting real-time health risk levels, two publications in novel Asthma health applications, associated with app development methods.",
     },
