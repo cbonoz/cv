@@ -64,7 +64,10 @@ docker compose down
 
 # FAQ
 
-1. Yarn mismatch error with cloudflare (yarn.lock override build error)
+1. Deploying on cloudflare
+https://developers.cloudflare.com/pages/framework-guides/deploy-a-nextjs-site/#deploy-via-the-cloudflare-dashboard
+
+2. Yarn mismatch error with cloudflare (yarn.lock override build error)
 https://www.reddit.com/r/CloudFlare/comments/16xppwd/cant_deploy_a_next_js_site_which_was_deployed_in/
 
 # License
