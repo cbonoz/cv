@@ -143,13 +143,33 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "BabyNaming.pro",
-      techStack: ["Next.js", "OpenAI", "Cloudflare", "Full Stack"],
+      title: "SPY Price Predictor",
+      techStack: ["Python", "RandomForest", "XGBoost", "Technical Analysis"],
       description:
-        "AI-powered baby name generator with semantic search and personalized recommendations.",
+        "ML model for next-day S&P 500 price prediction using VIX, yields, and technical indicators. 65% direction accuracy.",
       link: {
-        label: "babynaming.pro",
-        href: "https://babynaming.pro",
+        label: "github.com/cbonoz/openclaw-scripts",
+        href: "https://github.com/cbonoz/openclaw-scripts/tree/main/spy-price-predictor",
+      },
+    },
+    {
+      title: "OpenClaw Scripts",
+      techStack: ["Python", "AI Agents", "Automation", "Data"],
+      description:
+        "Collection of automation scripts including tax document redaction, market analysis, and AI workflow tools.",
+      link: {
+        label: "github.com/cbonoz/openclaw-scripts",
+        href: "https://github.com/cbonoz/openclaw-scripts",
+      },
+    },
+    {
+      title: "NFL Score Predictor",
+      techStack: ["Python", "Machine Learning", "Sports Analytics"],
+      description:
+        "Score prediction model for NFL games based on historical data and team statistics.",
+      link: {
+        label: "github.com/cbonoz/nfl-score-predict",
+        href: "https://github.com/cbonoz/nfl-score-predict",
       },
     },
     {
