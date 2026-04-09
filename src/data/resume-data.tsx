@@ -143,16 +143,6 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "LandApp",
-      techStack: ["TypeScript", "Real Estate", "Recommendations"],
-      description:
-        "Free land and business recommendation app with data-driven property insights.",
-      link: {
-        label: "github.com/cbonoz/landapp",
-        href: "https://github.com/cbonoz/landapp",
-      },
-    },
-    {
       title: "NFL Score Predictor",
       techStack: ["Python", "Machine Learning", "Sports Analytics"],
       description:
@@ -180,6 +170,16 @@ export const RESUME_DATA = {
       link: {
         label: "github.com/cbonoz/devvit25",
         href: "https://github.com/cbonoz/devvit25",
+      },
+    },
+    {
+      title: "Blockfreight",
+      techStack: ["JavaScript", "Blockchain", "Supply Chain"],
+      description:
+        "Blockchain-based product tracking and logistics platform for any parcel.",
+      link: {
+        label: "github.com/cbonoz/chainfa22",
+        href: "https://github.com/cbonoz/chainfa22",
       },
     },
   ],
