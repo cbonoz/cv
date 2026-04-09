@@ -173,13 +173,13 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Bugbite AI",
-      techStack: ["Kotlin", "TensorFlow", "Android", "Mobile ML"],
+      title: "VirtalityTest",
+      techStack: ["TypeScript", "Reddit", "Devvit", "Gaming"],
       description:
-        "Android app with on-device TensorFlow ML for image recognition and classification.",
+        "Reddit game for improving virality detection skills. Built with Devvit framework for Reddit's developer platform.",
       link: {
-        label: "github.com/cbonoz/bugbite-tf",
-        href: "https://github.com/cbonoz/bugbite-tf",
+        label: "github.com/cbonoz/devvit25",
+        href: "https://github.com/cbonoz/devvit25",
       },
     },
   ],
