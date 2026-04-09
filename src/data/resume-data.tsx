@@ -36,13 +36,13 @@ export const RESUME_DATA = {
   education: [
     {
       school: "UC Berkeley",
-      degree: "Engineering Physics",
+      degree: "BS Engineering Physics",
       start: "2011",
       end: "2013",
     },
     {
       school: "UCLA",
-      degree: "Computer Science",
+      degree: "MS Computer Science",
       start: "2015",
       end: "2016",
     },
