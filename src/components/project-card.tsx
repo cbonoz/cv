@@ -1,11 +1,6 @@
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  CardDescription,
-  CardTitle,
-} from "./ui/card";
+import { Card, CardHeader, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { ExternalLinkIcon } from "lucide-react";
 
 interface Props {
   title: string;
@@ -16,36 +11,39 @@ interface Props {
 
 export function ProjectCard({ title, description, tags, link }: Props) {
   return (
-    <Card className="flex flex-col overflow-hidden border border-muted p-3">
-      <CardHeader className="">
-        <div className="space-y-1">
-          <CardTitle className="text-base">
-            {link ? (
-              <a
-                href={link}
-                target="_blank"
-                className="inline-flex items-center gap-1 hover:underline"
-              >
-                {title}{" "}
-                <span className="size-1 rounded-full bg-green-500"></span>
-              </a>
-            ) : (
-              title
+    <Card className="flex flex-col overflow-hidden border-border/30 bg-card/30 hover:bg-card/50 hover-lift transition-all group">
+      <CardHeader className="pb-2">
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
+            <h3 className="text-sm font-semibold">
+              {link ? (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 hover:text-emerald-400 transition-colors"
+                >
+                  {title}
+                  <ExternalLinkIcon className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+              ) : (
+                title
+              )}
+            </h3>
+            {link && (
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
             )}
-          </CardTitle>
-          <div className="hidden font-mono text-xs underline print:visible">
-            {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
-          <CardDescription className="font-mono text-xs">
+          <p className="text-xs text-muted-foreground leading-relaxed">
             {description}
-          </CardDescription>
+          </p>
         </div>
       </CardHeader>
-      <CardContent className="mt-auto flex">
-        <div className="mt-2 flex flex-wrap gap-1">
+      <CardContent className="mt-auto pt-0">
+        <div className="flex flex-wrap gap-1">
           {tags.map((tag) => (
             <Badge
-              className="px-1 py-0 text-[10px]"
+              className="px-1.5 py-0 text-[10px] font-mono bg-secondary/30 hover:bg-secondary/50"
               variant="secondary"
               key={tag}
             >

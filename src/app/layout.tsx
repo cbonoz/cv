@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 
 import "./globals.css";
 import React from "react";
@@ -8,27 +8,36 @@ import React from "react";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-inter",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mono",
 });
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#ffffff",
+  themeColor: "#0f172a",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cbuonocore.com"),
   title: {
-    default: "Chris Buonocore | Engineering Lead | Full Stack Developer",
+    default: "Chris Buonocore | Builder & Engineering Lead",
     template: "%s | Chris Buonocore",
   },
   description:
-    "Experienced engineering leader specializing in Java, Python, Go, React/NextJS, and NodeJS. Track record of scaling web applications and leading high-performing teams at HubSpot, Stavvy, Drift, and Toast.",
+    "Engineering lead building automated workflows, AI systems, and real-world tools. Java, Python, Go, React/NextJS, NodeJS.",
   keywords: [
     "Chris Buonocore",
     "Software Engineer",
     "Engineering Lead",
     "Full Stack Developer",
+    "Automation",
+    "AI Systems",
     "Java",
     "Python",
     "Go",
@@ -37,11 +46,6 @@ export const metadata: Metadata = {
     "NodeJS",
     "TypeScript",
     "AWS",
-    "Cloud SaaS",
-    "Engineering Leadership",
-    "Boston Engineer",
-    "Staff Engineer",
-    "Technical Lead",
   ],
   authors: [{ name: "Chris Buonocore", url: "https://cbuonocore.com" }],
   creator: "Chris Buonocore",
@@ -49,13 +53,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
   alternates: {
     canonical: "/",
@@ -65,35 +62,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://cbuonocore.com",
     siteName: "Chris Buonocore",
-    title: "Chris Buonocore | Engineering Lead | Full Stack Developer",
-    description:
-      "Experienced engineering leader with a track record of scaling web applications and leading high-performing teams.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Chris Buonocore - Engineering Lead",
-      },
-    ],
+    title: "Chris Buonocore | Builder & Engineering Lead",
+    description: "Engineering lead building automated workflows and AI systems.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chris Buonocore | Engineering Lead | Full Stack Developer",
-    description:
-      "Experienced engineering leader with a track record of scaling web applications and leading high-performing teams.",
-    images: ["/og-image.png"],
+    title: "Chris Buonocore | Builder & Engineering Lead",
+    description: "Engineering lead building automated workflows and AI systems.",
     creator: "@chrisbcore",
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
-  },
-  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -102,7 +79,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -118,34 +95,17 @@ export default function RootLayout({
                 "https://x.com/chrisbcore",
               ],
               jobTitle: "Engineering Lead",
-              description:
-                "Experienced engineering leader specializing in Java, Python, Go, React/NextJS, and NodeJS",
-              worksFor: {
-                "@type": "Organization",
-                name: "HubSpot",
-              },
               knowsAbout: [
                 "Software Engineering",
+                "Automation",
+                "AI Systems",
                 "Full Stack Development",
-                "Java",
-                "Python",
-                "Go",
-                "React",
-                "NextJS",
-                "NodeJS",
-                "AWS",
-                "Cloud SaaS",
               ],
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Boston",
-                addressRegion: "MA",
-              },
             }),
           }}
         />
       </head>
-      <body>{children}</body>
+      <body className="font-sans">{children}</body>
       <Analytics />
     </html>
   );

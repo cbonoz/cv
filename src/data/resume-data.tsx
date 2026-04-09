@@ -1,22 +1,3 @@
-import {
-  AmbitLogo,
-  BarepapersLogo,
-  BimLogo,
-  CDGOLogo,
-  ClevertechLogo,
-  ConsultlyLogo,
-  EvercastLogo,
-  Howdy,
-  JarockiMeLogo,
-  JojoMobileLogo,
-  Minimal,
-  MobileVikingsLogo,
-  MonitoLogo,
-  NSNLogo,
-  ParabolLogo,
-  TastyCloudLogo,
-  YearProgressLogo,
-} from "@/images/logos";
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
 
 export const RESUME_DATA = {
@@ -25,9 +6,9 @@ export const RESUME_DATA = {
   location: "Boston, MA",
   locationLink: "https://www.google.com/maps/place/boston+ma",
   about:
-    "Experienced Engineer | Application Builder | Problem Solver.  My career focus is leading engineering teams using any mix of Java, Python, Go, and JavaScript/TypeScript (React/NextJS/NodeJS).",
+    "Engineering Lead | Systems Builder | Automation Enthusiast",
   summary:
-    "Passionate engineering leader with a track record of scaling web applications to tackle cutting-edge challenges. With years of experience in enterprise and start-up environments, I enjoy working in fast-paced and dynamic teams, leveraging my expertise in engineering leadership, project management software, and building cloud SaaS applications on AWS.",
+    "Passionate engineering leader with a track record of scaling web applications and building automated workflows. Currently focused on AI systems, financial tooling, and location-independent income streams. Experienced in Java, Python, Go, and TypeScript/React ecosystems.",
   avatarUrl:
     "https://media.licdn.com/dms/image/C4E03AQHaigKwxj8O7A/profile-displayphoto-shrink_800_800/0/1651705060341?e=1710979200&v=beta&t=0PvaSYt2798auikE33f_fIMXsZR6pJCqyj7ext4MNXg",
   personalWebsiteUrl: "https://cbuonocore.com",
@@ -86,7 +67,7 @@ export const RESUME_DATA = {
       end: "8/2023",
       badges: ["Hybrid"],
       description:
-        "Led implementation of core loan management and esigning platform, recruited and hired engineering team members, set up vendor/integration logs, configured data pipeline, performed FedRamp gap analysis, co-reviewed eSign engine.",
+        "Led implementation of core loan management and esigning platform, recruited and hired engineering team members, set up vendor/integration logs, configured data pipeline, performed FedRamp gap analysis.",
     },
     {
       company: "Drift",
@@ -97,7 +78,7 @@ export const RESUME_DATA = {
       end: "10/2019",
       badges: ["On Site"],
       description:
-        "Led a technical team responsible for building third-party integrations and APIs, completed team 1:1’s and coaching, set up code and deployed new Java backend services, built key integrations to enterprise partners.",
+        "Led a technical team responsible for building third-party integrations and APIs, set up code and deployed new Java backend services, built key integrations to enterprise partners.",
     },
     {
       company: "Toast",
@@ -108,7 +89,7 @@ export const RESUME_DATA = {
       start: "3/2017",
       end: "5/2018",
       description:
-        "Engineer on the Android Platform team, triaged customer-facing issues, implemented encryption and security protocols in Kotlin, upgraded and incorporated Java/Kotlin libraries, added caching and menu performance optimizations.",
+        "Engineer on the Android Platform team, implemented encryption and security protocols in Kotlin, added caching and menu performance optimizations.",
     },
     {
       company: "eHealth Research Lab",
@@ -119,7 +100,7 @@ export const RESUME_DATA = {
       start: "10/2015",
       end: "3/2017",
       description:
-        "Main Developer on Android wearable and mobile app predicting real-time health risk levels, two publications in novel Asthma health applications, associated with app development methods.",
+        "Main Developer on Android wearable and mobile app predicting real-time health risk levels, two publications in novel Asthma health applications.",
     },
     {
       company: "Google",
@@ -132,106 +113,64 @@ export const RESUME_DATA = {
       description:
         "Extended an A/B test web monitoring platform used across apps like Youtube, Gmail, and several internal tools.",
     },
-    {
-      company: "HackerRank",
-      location: "Bay Area, CA",
-      title: "Technical Solutions Engineer",
-      link: "https://hackerrank.com",
-      badges: ["On Site"],
-      start: "10/2014",
-      end: "10/2015",
-      description:
-        "Led or co-led customer-facing presentations, extended functionality of internal Chrome extensions using javascript/jquery.",
-    },
-    {
-      company: "Oracle",
-      location: "Bay Area, CA",
-      title: "Technical Solutions Engineer",
-      badges: ["On Site"],
-      start: "6/2013",
-      link: "https://oracle.com",
-      end: "10/2014",
-      description:
-        "Led or co-led customer-facing presentations, extended functionality of internal Chrome extensions using javascript/jquery.",
-    },
   ],
   skills: [
     "Java",
     "Python",
-    "React/Typescript",
-    "NodeJS",
-    "Kotlin",
+    "TypeScript",
+    "React/Next.js",
+    "Node.js",
     "Go",
-    "SQL (Postgres/MySQL)",
-    "Bash scripting",
-    "Spring",
-    "Android",
-    "Dropwizard",
-    "FastAPI",
-    "Gin",
+    "Kotlin",
+    "PostgreSQL",
+    "AWS",
     "Docker",
     "Terraform",
-    "CICD",
-    "Serverless/Lambda",
+    "FastAPI",
+    "Spring",
+    "AI/ML",
+    "Automation",
   ],
   projects: [
     {
-      title: "Contributor to open source projects",
-      techStack: [
-        "Droidcon Android application",
-        "Elasticsearch",
-        "Layer-2 crypto projects like Cosmos",
-      ],
+      title: "LandKoala",
+      techStack: ["Next.js", "AI", "Real Estate", "Automation"],
       description:
-        "Contributor to open source projects such as the Droidcon Android application (1000’s of attendees), Elasticsearch, and Layer-2 crypto projects like Cosmos.",
-      // logo: ConsultlyLogo,
+        "Real estate analysis and land investment platform with AI-powered insights and automated workflows.",
       link: {
-        label: "github.com",
-        href: "https://github.com/cbonoz",
+        label: "landkoala.com",
+        href: "https://landkoala.com",
       },
     },
     {
-      title: "Built a hosted app babynaming.pro",
-      techStack: ["Full stack", "NextJS", "Integration with OpenAI"],
+      title: "BabyNaming.pro",
+      techStack: ["Next.js", "OpenAI", "Cloudflare", "Full Stack"],
       description:
-        "Built a hosted app babynaming.pro (full stack / NextJS) that integrates OpenAI. Deployed on Cloudflare/AWS.",
+        "AI-powered baby name generator with semantic search and personalized recommendations.",
       link: {
         label: "babynaming.pro",
         href: "https://babynaming.pro",
       },
     },
     {
-      title: "Hosted and shipped four Android mobile applications",
-      techStack: ["Android", "Mobile development"],
+      title: "Open Source Contributions",
+      techStack: ["Droidcon", "Elasticsearch", "Cosmos SDK"],
       description:
-        "Hosted and shipped four Android mobile applications to production, one getting over 10k downloads internationally.",
+        "Contributor to Droidcon Android app (1000s of attendees), Elasticsearch, and Layer-2 crypto projects.",
+      link: {
+        label: "github.com/cbonoz",
+        href: "https://github.com/cbonoz",
+      },
     },
     {
-      title: "Winner of several prototyping and web contests",
-      techStack: ["Devpost", "AT&T global prize in 2018", "AI platform Acumos"],
+      title: "Hackathon Wins",
+      techStack: ["Devpost", "AT&T Prize 2018", "AI Platform"],
       description:
-        "Winner of several prototyping and web contests on Devpost https://devpost.com/cbonoz, including an AT&T global prize in 2018 piloted on their AI platform Acumos.",
+        "Winner of several prototyping contests including AT&T global prize on their AI platform Acumos.",
       link: {
-        label: "devpost.com",
+        label: "devpost.com/cbonoz",
         href: "https://devpost.com/cbonoz",
       },
     },
-    // {
-    //   title: "Consultly",
-    //   techStack: [
-    //     "Side Project",
-    //     "TypeScript",
-    //     "Next.js",
-    //     "Vite",
-    //     "GraphQL",
-    //     "WebRTC",
-    //   ],
-    //   description: "A platform to build and grow your online business",
-    //   logo: ConsultlyLogo,
-    //   link: {
-    //     label: "consultly.com",
-    //     href: "https://consultly.com/",
-    //   },
-    // },
   ],
 } as const;
