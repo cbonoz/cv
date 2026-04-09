@@ -173,13 +173,13 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Connect Four",
-      techStack: ["CSS", "JavaScript", "Multiplayer"],
+      title: "Bugbite AI",
+      techStack: ["Kotlin", "TensorFlow", "Android", "Mobile ML"],
       description:
-        "Online multiplayer Connect 4 game with real-time gameplay.",
+        "Android app with on-device TensorFlow ML for image recognition and classification.",
       link: {
-        label: "github.com/cbonoz/connectfour",
-        href: "https://github.com/cbonoz/connectfour",
+        label: "github.com/cbonoz/bugbite-tf",
+        href: "https://github.com/cbonoz/bugbite-tf",
       },
     },
   ],
