@@ -143,23 +143,13 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "SPY Price Predictor",
-      techStack: ["Python", "RandomForest", "XGBoost", "Technical Analysis"],
+      title: "LandApp",
+      techStack: ["TypeScript", "Real Estate", "Recommendations"],
       description:
-        "ML model for next-day S&P 500 price prediction using VIX, yields, and technical indicators. 65% direction accuracy.",
+        "Free land and business recommendation app with data-driven property insights.",
       link: {
-        label: "github.com/cbonoz/openclaw-scripts",
-        href: "https://github.com/cbonoz/openclaw-scripts/tree/main/spy-price-predictor",
-      },
-    },
-    {
-      title: "OpenClaw Scripts",
-      techStack: ["Python", "AI Agents", "Automation", "Data"],
-      description:
-        "Collection of automation scripts including tax document redaction, market analysis, and AI workflow tools.",
-      link: {
-        label: "github.com/cbonoz/openclaw-scripts",
-        href: "https://github.com/cbonoz/openclaw-scripts",
+        label: "github.com/cbonoz/landapp",
+        href: "https://github.com/cbonoz/landapp",
       },
     },
     {
@@ -180,6 +170,16 @@ export const RESUME_DATA = {
       link: {
         label: "github.com/cbonoz/agentic25",
         href: "https://github.com/cbonoz/agentic25",
+      },
+    },
+    {
+      title: "Devvit Games",
+      techStack: ["TypeScript", "Reddit", "Gaming"],
+      description:
+        "VirtalityTest: Reddit game for improving virality detection skills. Devvit hackathon submission.",
+      link: {
+        label: "github.com/cbonoz/devvit25",
+        href: "https://github.com/cbonoz/devvit25",
       },
     },
   ],
