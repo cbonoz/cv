@@ -6,7 +6,7 @@ export const RESUME_DATA = {
   location: "Boston, MA",
   locationLink: "https://www.google.com/maps/place/boston+ma",
   about:
-    "Engineering Lead | Systems Builder | Automation Enthusiast",
+    "Engineering Lead | Systems Builder | Automation",
   summary:
     "Passionate engineering leader with a track record of scaling web applications and building automated workflows. Currently focused on AI systems, financial tooling, and location-independent income streams. Experienced in Java, Python, Go, and TypeScript/React ecosystems.",
   avatarUrl:
@@ -173,23 +173,13 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Open Source Contributions",
-      techStack: ["Droidcon", "Elasticsearch", "Cosmos SDK"],
+      title: "StampX",
+      techStack: ["Solidity", "Web3", "AI Agents"],
       description:
-        "Contributor to Droidcon Android app (1000s of attendees), Elasticsearch, and Layer-2 crypto projects.",
+        "Web3 loyalty program platform with AI agent-driven smart contract interactions.",
       link: {
-        label: "github.com/cbonoz",
-        href: "https://github.com/cbonoz",
-      },
-    },
-    {
-      title: "Hackathon Wins",
-      techStack: ["Devpost", "AT&T Prize 2018", "AI Platform"],
-      description:
-        "Winner of several prototyping contests including AT&T global prize on their AI platform Acumos.",
-      link: {
-        label: "devpost.com/cbonoz",
-        href: "https://devpost.com/cbonoz",
+        label: "github.com/cbonoz/agentic25",
+        href: "https://github.com/cbonoz/agentic25",
       },
     },
   ],
