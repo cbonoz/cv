@@ -143,6 +143,16 @@ export const RESUME_DATA = {
       },
     },
     {
+      title: "House Valuation",
+      techStack: ["Python", "Machine Learning", "Acumos", "Redfin"],
+      description:
+        "Automated house price estimator combining Redfin data with ML models via Acumos platform.",
+      link: {
+        label: "github.com/cbonoz/acumos-house-valuations",
+        href: "https://github.com/cbonoz/acumos-house-valuations",
+      },
+    },
+    {
       title: "NFL Score Predictor",
       techStack: ["Python", "Machine Learning", "Sports Analytics"],
       description:
@@ -163,23 +173,13 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Devvit Games",
-      techStack: ["TypeScript", "Reddit", "Gaming"],
+      title: "Connect Four",
+      techStack: ["CSS", "JavaScript", "Multiplayer"],
       description:
-        "VirtalityTest: Reddit game for improving virality detection skills. Devvit hackathon submission.",
+        "Online multiplayer Connect 4 game with real-time gameplay.",
       link: {
-        label: "github.com/cbonoz/devvit25",
-        href: "https://github.com/cbonoz/devvit25",
-      },
-    },
-    {
-      title: "Blockfreight",
-      techStack: ["JavaScript", "Blockchain", "Supply Chain"],
-      description:
-        "Blockchain-based product tracking and logistics platform for any parcel.",
-      link: {
-        label: "github.com/cbonoz/chainfa22",
-        href: "https://github.com/cbonoz/chainfa22",
+        label: "github.com/cbonoz/connectfour",
+        href: "https://github.com/cbonoz/connectfour",
       },
     },
   ],
