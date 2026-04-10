@@ -9,7 +9,7 @@ export const RESUME_DATA = {
     "Engineering Lead | Systems Builder | Automation",
   summary:
     "Passionate engineering leader with a track record of scaling web applications and building automated workflows. Currently focused on AI systems, financial tooling, and location-independent income streams. Experienced in Java, Python, Go, and TypeScript/React ecosystems.",
-  avatarUrl:
+  avatarUrl: "/me.webp",
     "https://media.licdn.com/dms/image/C4E03AQHaigKwxj8O7A/profile-displayphoto-shrink_800_800/0/1651705060341?e=1710979200&v=beta&t=0PvaSYt2798auikE33f_fIMXsZR6pJCqyj7ext4MNXg",
   personalWebsiteUrl: "https://cbuonocore.com",
   contact: {
