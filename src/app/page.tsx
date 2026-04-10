@@ -13,15 +13,15 @@ import { useState, useEffect } from "react";
 // Live status indicator component
 function StatusIndicator() {
   const [time, setTime] = useState<string>("");
-  
+
   useEffect(() => {
-    setTime(new Date().toLocaleTimeString("en-US", { 
+    setTime(new Date().toLocaleTimeString("en-US", {
       timeZone: "America/New_York",
       hour: "2-digit",
       minute: "2-digit"
     }));
     const interval = setInterval(() => {
-      setTime(new Date().toLocaleTimeString("en-US", { 
+      setTime(new Date().toLocaleTimeString("en-US", {
         timeZone: "America/New_York",
         hour: "2-digit",
         minute: "2-digit"
@@ -47,15 +47,15 @@ function StatusIndicator() {
 function ActivityFeed() {
   const activities = [
     { icon: Code2, text: "Building AI workflows with OpenClaw", time: "Now" },
-    { icon: Terminal, text: "SPY prediction model: 65% accuracy", time: "Recent" },
+    { icon: Terminal, text: "SPY direction prediction model: 60% accuracy", time: "Recent" },
     { icon: Zap, text: "Automating tax document processing", time: "Recent" },
   ];
 
   return (
     <div className="space-y-2">
       {activities.map((activity, i) => (
-        <div 
-          key={i} 
+        <div
+          key={i}
           className="flex items-center gap-3 text-xs font-mono text-muted-foreground animate-slide-up"
           style={{ animationDelay: `${i * 100}ms` }}
         >
@@ -106,7 +106,7 @@ export default function Page() {
               <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
               <AvatarFallback className="text-lg">{RESUME_DATA.initials}</AvatarFallback>
             </Avatar>
-            
+
             <div className="flex-1 space-y-2">
               <div>
                 <h1 className="text-3xl font-bold tracking-tight">{RESUME_DATA.name}</h1>
@@ -137,8 +137,8 @@ export default function Page() {
           </h2>
           <div className="space-y-3">
             {RESUME_DATA.work.slice(0, 4).map((work, i) => (
-              <Card 
-                key={work.company} 
+              <Card
+                key={work.company}
                 className="bg-card/30 border-border/30 hover-lift hover:bg-card/50 transition-colors"
               >
                 <CardHeader className="pb-2">
@@ -150,9 +150,9 @@ export default function Page() {
                         </a>
                       </h3>
                       {work.badges.map((badge) => (
-                        <Badge 
-                          key={badge} 
-                          variant="secondary" 
+                        <Badge
+                          key={badge}
+                          variant="secondary"
                           className="text-[10px] px-1.5 py-0 h-4 bg-secondary/50"
                         >
                           {badge}
@@ -200,9 +200,9 @@ export default function Page() {
           </h2>
           <div className="flex flex-wrap gap-1.5">
             {RESUME_DATA.skills.map((skill) => (
-              <Badge 
-                key={skill} 
-                variant="secondary" 
+              <Badge
+                key={skill}
+                variant="secondary"
                 className="text-xs font-mono bg-secondary/30 hover:bg-secondary/50 transition-colors cursor-default"
               >
                 {skill}
