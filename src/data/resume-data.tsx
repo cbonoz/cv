@@ -181,5 +181,23 @@ export const RESUME_DATA = {
         href: "https://github.com/cbonoz/devvit25",
       },
     },
+    {
+      title: "TravelMink",
+      techStack: ["TypeScript", "Next.js", "Tailwind", "Bun"],
+      description: "AI-powered travel planning and assistant app.",
+      link: {
+        label: "travelmink.com",
+        href: "https://travelmink.com"
+      }
+    },
+    {
+      title: "RentalEval",
+      techStack: ["TypeScript", "Next.js", "Tailwind", "Bun"],
+      description: "Tool for evaluating rental properties and market opportunities.",
+      link: {
+        label: "rental-eval.vercel.app",
+        href: "https://rental-eval.vercel.app"
+      }
+    },
   ],
 } as const;
