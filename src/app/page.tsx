@@ -5,7 +5,7 @@ import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
-import { GlobeIcon, MailIcon, ExternalLinkIcon, Code2, Zap, Terminal } from "lucide-react";
+import { GlobeIcon, MailIcon, ExternalLinkIcon, Code2, GitCommitIcon, GitPullRequestIcon, StarIcon, Terminal } from "lucide-react";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
 import { useState, useEffect } from "react";
@@ -43,25 +43,66 @@ function StatusIndicator() {
   );
 }
 
-// Activity feed component
-function ActivityFeed() {
-  const activities = [
-    { icon: Code2, text: "Building AI workflows with OpenClaw", time: "Now" },
-    { icon: Terminal, text: "SPY direction prediction model: 60% accuracy", time: "Recent" },
-    { icon: Zap, text: "Automating tax document processing", time: "Recent" },
-  ];
+// Recent GitHub activity
+function GitHubActivity() {
+  const [events, setEvents] = useState<Array<{icon: any; text: string; time: string}>>([]);
+
+  useEffect(() => {
+    fetch("https://api.github.com/users/cbonoz/events/public?per_page=5")
+      .then(r => r.json())
+      .then(data => {
+        const mapped = data.slice(0, 5).map((e: any) => {
+          const repo = e.repo?.name?.replace("cbonoz/", "") || "";
+          const type = e.type;
+          let text = "";
+          let icon = Code2;
+          let time = "";
+
+          if (type === "PushEvent") {
+            const count = e.payload?.commits?.length || 0;
+            text = `${count} commit${count > 1 ? "s" : ""} → ${repo}`;
+            icon = GitCommitIcon;
+          } else if (type === "PullRequestEvent") {
+            text = `PR ${e.payload?.action} → ${repo}`;
+            icon = GitPullRequestIcon;
+          } else if (type === "CreateEvent") {
+            text = `Created ${e.payload?.ref_type} → ${repo}`;
+            icon = StarIcon;
+          } else if (type === "ForkEvent") {
+            text = `Forked ${repo}`;
+            icon = GitPullRequestIcon;
+          } else if (type === "IssuesEvent") {
+            text = `Issue ${e.payload?.action} → ${repo}`;
+            icon = Terminal;
+          } else {
+            text = type.replace("Event", "") + " → " + repo;
+          }
+
+          const minutesAgo = Math.floor((Date.now() - new Date(e.created_at).getTime()) / 60000);
+          if (minutesAgo < 60) time = `${minutesAgo}m ago`;
+          else if (minutesAgo < 1440) time = `${Math.floor(minutesAgo / 60)}h ago`;
+          else time = `${Math.floor(minutesAgo / 1440)}d ago`;
+
+          return { icon, text, time };
+        });
+        setEvents(mapped);
+      })
+      .catch(() => {});
+  }, []);
+
+  if (events.length === 0) return null;
 
   return (
     <div className="space-y-2">
-      {activities.map((activity, i) => (
+      {events.map((event, i) => (
         <div
           key={i}
           className="flex items-center gap-3 text-xs font-mono text-muted-foreground animate-slide-up"
           style={{ animationDelay: `${i * 100}ms` }}
         >
-          <activity.icon className="h-3 w-3 text-emerald-400" />
-          <span className="flex-1">{activity.text}</span>
-          <span className="text-border">{activity.time}</span>
+          <event.icon className="h-3 w-3 text-emerald-400 shrink-0" />
+          <span className="flex-1 truncate">{event.text}</span>
+          <span className="text-border shrink-0">{event.time}</span>
         </div>
       ))}
     </div>
@@ -118,10 +159,10 @@ export default function Page() {
             </div>
           </div>
 
-          {/* Quick stats / activity */}
+          {/* GitHub activity feed */}
           <Card className="bg-card/50 border-border/50">
             <CardContent className="pt-4 pb-4">
-              <ActivityFeed />
+              <GitHubActivity />
             </CardContent>
           </Card>
 

@@ -6,9 +6,9 @@ export const RESUME_DATA = {
   location: "Boston, MA",
   locationLink: "https://www.google.com/maps/place/boston+ma",
   about:
-    "Engineering Lead | Systems Builder | Automation",
+    "Engineering Lead | API Platform Builder | AI Tooling",
   summary:
-    "Passionate engineering leader with a track record of scaling web applications and building automated workflows. Currently focused on AI systems, financial tooling, and location-independent income streams. Experienced in Java, Python, Go, and TypeScript/React ecosystems.",
+    "Engineering leader who builds API platforms and data infrastructure at scale. Previously managed two engineering managers as Director of Engineering at Stavvy, then moved to HubSpot as an Engineering Lead for the scale and technical impact — owning platform infrastructure processing billions of API calls per day. Daily user of AI coding tools (Claude Code, OpenCode, Hermes Agent via MCP). Experienced in Java, Python, Go, and TypeScript/React ecosystems.",
   avatarUrl: "/me.webp",
   personalWebsiteUrl: "https://cbuonocore.com",
   contact: {
@@ -35,15 +35,15 @@ export const RESUME_DATA = {
   education: [
     {
       school: "UC Berkeley",
-      degree: "BS Engineering Physics",
+      degree: "BS Engineering Physics, 2013",
       start: "2011",
       end: "2013",
     },
     {
       school: "UCLA",
-      degree: "MS Computer Science",
+      degree: "MS Computer Science, 2017",
       start: "2015",
-      end: "2016",
+      end: "2017",
     },
   ],
   work: [
@@ -55,7 +55,8 @@ export const RESUME_DATA = {
       start: "11/2023",
       end: "Current",
       badges: ["Hybrid"],
-      description: "Reporting, goals, and KPIs in the HubSpot platform.",
+      description:
+        "Lead a team owning a platform processing billions of API calls per day. Built Kafka pipelines for real-time attribution, drove Snowflake optimization reducing P50 latencies by 50%, migrated 300K+ legacy reports, and implemented automated data purging resulting in 40%+ storage cost reduction.",
     },
     {
       company: "Stavvy",
@@ -125,10 +126,11 @@ export const RESUME_DATA = {
     "AWS",
     "Docker",
     "Terraform",
+    "Kafka",
+    "Snowflake",
     "FastAPI",
     "Spring",
-    "AI/ML",
-    "Automation",
+    "AI Tooling (Claude Code, OpenCode, Hermes Agent, MCP)",
   ],
   projects: [
     {
