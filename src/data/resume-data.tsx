@@ -56,7 +56,7 @@ export const RESUME_DATA = {
       end: "Current",
       badges: ["Hybrid"],
       description:
-        "Lead a team in HubSpot's Reporting group, owning the platform powering marketing and sales analytics for 300K+ businesses. Built Kafka pipelines for real-time attribution tracking across the full customer journey. Drove Snowflake optimization cutting P50 query latencies by 50%. Migrated 300K+ legacy reports and implemented automated data lifecycle policies, reducing storage costs by 40%+.",
+        "Lead a team in HubSpot's Reporting group, working on the platform powering marketing and sales analytics for 300K+ businesses. Built Kafka pipelines for real-time attribution tracking across the full customer journey. Drove Snowflake optimization cutting P50 query latencies by 50%. Migrated 300K+ legacy reports and implemented automated data lifecycle policies, reducing storage costs by 40%+.",
     },
     {
       company: "Stavvy",
