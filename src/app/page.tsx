@@ -51,6 +51,7 @@ function GitHubActivity() {
     fetch("https://api.github.com/users/cbonoz/events/public?per_page=5")
       .then(r => r.json())
       .then(data => {
+        if (!Array.isArray(data)) return;
         const mapped = data.slice(0, 5).map((e: any) => {
           const repo = e.repo?.name?.replace("cbonoz/", "") || "";
           const type = e.type;
