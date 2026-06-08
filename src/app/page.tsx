@@ -59,8 +59,8 @@ function GitHubActivity() {
           let time = "";
 
           if (type === "PushEvent") {
-            const count = e.payload?.commits?.length || 0;
-            text = `${count} commit${count > 1 ? "s" : ""} → ${repo}`;
+            const count = e.payload?.size || e.payload?.commits?.length || 0;
+            text = `${count} commit${count !== 1 ? "s" : ""} → ${repo}`;
             icon = GitCommitIcon;
           } else if (type === "PullRequestEvent") {
             text = `PR ${e.payload?.action} → ${repo}`;
