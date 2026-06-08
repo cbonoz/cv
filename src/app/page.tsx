@@ -45,7 +45,7 @@ function StatusIndicator() {
 
 // Recent GitHub activity
 function GitHubActivity() {
-  const [events, setEvents] = useState<Array<{icon: any; text: string; time: string}>>([]);
+  const [events, setEvents] = useState<Array<{icon: any; text: string; time: string; url: string}>>([]);
 
   useEffect(() => {
     fetch("https://api.github.com/users/cbonoz/events/public?per_page=5")
@@ -54,6 +54,7 @@ function GitHubActivity() {
         if (!Array.isArray(data)) return;
         const mapped = data.slice(0, 5).map((e: any) => {
           const repo = e.repo?.name?.replace("cbonoz/", "") || "";
+          const repoUrl = `https://github.com/${e.repo?.name || ""}`;
           const type = e.type;
           let text = "";
           let icon = Code2;
@@ -83,7 +84,7 @@ function GitHubActivity() {
           else if (minutesAgo < 1440) time = `${Math.floor(minutesAgo / 60)}h ago`;
           else time = `${Math.floor(minutesAgo / 1440)}d ago`;
 
-          return { icon, text, time };
+          return { icon, text, time, url: repoUrl };
         });
         setEvents(mapped);
       })
@@ -95,15 +96,18 @@ function GitHubActivity() {
   return (
     <div className="space-y-2">
       {events.map((event, i) => (
-        <div
+        <a
           key={i}
-          className="flex items-center gap-3 text-xs font-mono text-muted-foreground animate-slide-up"
+          href={event.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 text-xs font-mono text-muted-foreground animate-slide-up hover:text-foreground transition-colors"
           style={{ animationDelay: `${i * 100}ms` }}
         >
           <event.icon className="h-3 w-3 text-emerald-400 shrink-0" />
           <span className="flex-1 truncate">{event.text}</span>
           <span className="text-border shrink-0">{event.time}</span>
-        </div>
+        </a>
       ))}
     </div>
   );
