@@ -10,6 +10,11 @@ import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
 import { useState, useEffect } from "react";
 
+function truncate(str: string, max: number) {
+  if (str.length <= max) return str;
+  return str.slice(0, max - 3) + "...";
+}
+
 // Live status indicator component
 function StatusIndicator() {
   const [time, setTime] = useState<string>("");
@@ -43,29 +48,55 @@ function StatusIndicator() {
   );
 }
 
-// Recent GitHub activity
+// Recent GitHub activity with commit messages
+async function fetchCommits(repo: string, before: string, head: string): Promise<string[]> {
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${repo}/compare/${before}...${head}?per_page=3`
+    );
+    if (!res.ok) return [];
+    const data = await res.json();
+    return (data.commits || []).map((c: any) => c.commit.message.split("\n")[0]);
+  } catch {
+    return [];
+  }
+}
+
 function GitHubActivity() {
-  const [events, setEvents] = useState<Array<{icon: any; text: string; time: string; url: string}>>([]);
+  const [events, setEvents] = useState<Array<{icon: any; text: string; time: string; url: string; actionUrl?: string}>>([]);
 
   useEffect(() => {
     fetch("https://api.github.com/users/cbonoz/events/public?per_page=5")
       .then(r => r.json())
-      .then(data => {
+      .then(async data => {
         if (!Array.isArray(data)) return;
-        const mapped = data.slice(0, 5).map((e: any) => {
+        const results = data.slice(0, 5);
+        const mapped = await Promise.all(results.map(async (e: any) => {
           const repo = e.repo?.name?.replace("cbonoz/", "") || "";
           const repoUrl = `https://github.com/${e.repo?.name || ""}`;
           const type = e.type;
           let text = "";
           let icon = Code2;
           let time = "";
+          let actionUrl = repoUrl;
 
           if (type === "PushEvent") {
-            text = `→ ${repo}`;
+            const before = e.payload?.before;
+            const head = e.payload?.head;
+            let msg = "";
+            if (before && head && before !== head) {
+              const commits = await fetchCommits(e.repo.name, before, head);
+              if (commits.length > 0) {
+                msg = ` — ${truncate(commits[0], 50)}`;
+                actionUrl = `https://github.com/${e.repo.name}/commit/${head}`;
+              }
+            }
+            text = `→ ${repo}${msg}`;
             icon = GitCommitIcon;
           } else if (type === "PullRequestEvent") {
             text = `PR ${e.payload?.action} → ${repo}`;
             icon = GitPullRequestIcon;
+            actionUrl = e.payload?.pull_request?.html_url || repoUrl;
           } else if (type === "CreateEvent") {
             text = `Created ${e.payload?.ref_type} → ${repo}`;
             icon = StarIcon;
@@ -75,6 +106,7 @@ function GitHubActivity() {
           } else if (type === "IssuesEvent") {
             text = `Issue ${e.payload?.action} → ${repo}`;
             icon = Terminal;
+            actionUrl = e.payload?.issue?.html_url || repoUrl;
           } else {
             text = type.replace("Event", "") + " → " + repo;
           }
@@ -84,8 +116,8 @@ function GitHubActivity() {
           else if (minutesAgo < 1440) time = `${Math.floor(minutesAgo / 60)}h ago`;
           else time = `${Math.floor(minutesAgo / 1440)}d ago`;
 
-          return { icon, text, time, url: repoUrl };
-        });
+          return { icon, text, time, url: actionUrl };
+        }));
         setEvents(mapped);
       })
       .catch(() => {});
