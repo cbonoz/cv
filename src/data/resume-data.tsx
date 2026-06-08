@@ -6,7 +6,7 @@ export const RESUME_DATA = {
   location: "Boston, MA",
   locationLink: "https://www.google.com/maps/place/boston+ma",
   about:
-    "Engineering Lead | API Platform Builder | AI Tooling",
+    "Engineering Lead at HubSpot · Building APIs for 300K+ Businesses",
   summary:
     "Engineering leader who builds API platforms and data infrastructure at scale. Previously managed two engineering managers as Director of Engineering at Stavvy, then moved to HubSpot as an Engineering Lead for the scale and technical impact — owning platform infrastructure processing billions of API calls per day. Daily user of AI coding tools (Claude Code, OpenCode, Hermes Agent via MCP). Experienced in Java, Python, Go, and TypeScript/React ecosystems.",
   avatarUrl: "/me.webp",

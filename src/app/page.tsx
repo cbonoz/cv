@@ -270,7 +270,7 @@ export default function Page() {
         {/* Footer */}
         <footer className="pt-8 border-t border-border/30">
           <div className="flex items-center justify-between text-xs text-muted-foreground font-mono">
-            <span>Built with Next.js + shadcn/ui</span>
+            <span>Built with Next.js + shadcn/ui · Hosted on Cloudflare</span>
             <span>© {new Date().getFullYear()}</span>
           </div>
         </footer>
