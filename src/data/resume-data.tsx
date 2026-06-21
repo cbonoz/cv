@@ -201,5 +201,14 @@ export const RESUME_DATA = {
         href: "https://rental-eval.vercel.app"
       }
     },
+    {
+      title: "TrendFlamingo",
+      techStack: ["TypeScript", "Next.js", "Drizzle", "Supabase", "Vercel"],
+      description: "Market trends dashboard that surfaces trending consumer keywords and maps them to publicly traded stocks.",
+      link: {
+        label: "trendflamingo.com",
+        href: "https://trendflamingo.com"
+      }
+    },
   ],
 } as const;
