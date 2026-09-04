@@ -213,7 +213,7 @@ export default function Page() {
             Experience
           </h2>
           <div className="space-y-3">
-            {RESUME_DATA.work.slice(0, 4).map((work, i) => (
+            {RESUME_DATA.work.map((work, i) => (
               <Card
                 key={work.company}
                 className="bg-card/30 border-border/30 hover-lift hover:bg-card/50 transition-colors"
